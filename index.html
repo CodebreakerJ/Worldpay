@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uppercase Input Fields</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  textarea {
+    width: 180px;
+    height:130px;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+   
+  }
+</style>
+</head>
+<body>
+<div id="mainbody">  
+  <div class="worldpay">
+    <h1 >Worldpay</h1>
+    <h2>from FIS</h2><br><br>
+    <h3>PRIVATE AND CONFIDENTIAL</h3>
+  </div>
+  <div class="Address">
+    <p>Customer Launch</p>
+    <p>Victory House</p>
+    <p>Fifth Avenue</p>
+    <p>Gateshead</p>
+    <p>NE11 0EL</p>
+ </div>
+  <div class="hepldesk">
+      <h3>Worldpay hepldesk</h3>
+      <p>+44(0) 3457616263</p>
+      <p>+353(0) 1800242636</p>  
+  </div>
+  <div class="PO">
+    <p>Reference:PO</p>
+    <p>Case:SR</p>
+  </div>
+
+    
+
+  <div id="box1">
+  <input type="text" id="input1" placeholder="Name" oninput="updateTextArea()"><br>
+  <input type="text" id="input2" placeholder="Company Name" oninput="updateTextArea()"><br>
+  <input type="text" id="input3" placeholder="Address Line 1" oninput="updateTextArea()"><br>
+  <input type="text" id="input4" placeholder="Address Line 2" oninput="updateTextArea()"><br>
+  <input type="text" id="input6" placeholder="City" oninput="updateTextArea()"><br>
+  <input type="text" id="input7" placeholder="Postcode" oninput="updateTextArea()"><br>
+  <input type="text" id="input7" value="*INTL*" oninput="updateTextArea()"><br>
+
+  <!-- Textarea -->
+  <div class=" textarea1 ">
+    <!-- <textarea id="textArea">Text to be copied...</textarea> -->
+    <textarea id="output" readonly></textarea>
+    <button onclick="copyToClipboard()">Copy</button>
+
+  <!-- Input Tag Name -->
+</div>
+</div>
+<div class="content">
+  <p>Dear Name,</p><br>
+  <p>Your safety is important to us, so we are writing to let you know that we have been asked to amend the Email Address on the above Worldpay account</p> <br>
+
+  <p>To help protect you, please get in touch with us as soon as possible if you did not request this change. Please call our Contact Centre on 034576626 who will provide assistance 24 hours a day, 7 days a week.</p><br>
+
+  <p>Please have your reference number, as indicated at the top of this letter, ready when you call</p><br>
+  <p>Thank you in advance for helping us to protect the services we provide in support of your business.</p><br>
+  <p>Yours faithfully.</p>
+
+</div>
+<div class="sign">
+  <p>Chris Wood</p>
+  <p>General Manager</p>
+  <p>For and on behalf of worldpay from FIS</p>
+</div>
+
+</div>
+  
+
+  <script>
+    function updateTextArea() {
+      const inputs = document.querySelectorAll('input[type="text"]');
+      let outputText = '';
+      inputs.forEach(input => {
+        outputText += input.value.toUpperCase() + '\n';
+      });
+      document.getElementById('output').value = outputText.trim(); // trim to remove extra newline at the end
+    }
+    // Coppy Button
+    function copyToClipboard() {
+    /* Get the text field */
+    var copyText = document.getElementById("output");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    
+
+ 
+}
+
+  </script>
+</body>
+</html>
